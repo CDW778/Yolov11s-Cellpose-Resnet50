@@ -1,0 +1,19 @@
+{
+  "selected_checkpoint": "runs/icpr2012_v2a_gtcrop4/weights/epoch25.pt",
+  "frozen_conf": 0.05,
+  "budget": 30.0,
+  "val": {
+    "gt_mitotic": 164,
+    "candidates": 418,
+    "candidates_per_slide": 29.857142857142858,
+    "recall_patch224": 0.9390243902439024,
+    "recall_center16": 0.9024390243902439
+  },
+  "test": {
+    "gt_mitotic": 84,
+    "candidates": 177,
+    "candidates_per_slide": 12.642857142857142,
+    "recall_patch224": 0.9523809523809523,
+    "recall_center16": 0.9523809523809523
+  }
+}

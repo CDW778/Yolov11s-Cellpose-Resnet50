@@ -1,0 +1,360 @@
+[1/3] build GT-free train/val boards
+/home/hyw/miniforge3/envs/cellpose/lib/python3.8/site-packages/google/auth/__init__.py:52: FutureWarning: You are using a Python version 3.8 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.8"), FutureWarning)
+/home/hyw/miniforge3/envs/cellpose/lib/python3.8/site-packages/google/oauth2/__init__.py:38: FutureWarning: You are using a Python version 3.8 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.8"), FutureWarning)
+/home/hyw/miniforge3/envs/cellpose/lib/python3.8/site-packages/google/auth/crypt/es.py:21: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  import cryptography.exceptions
+/home/hyw/miniforge3/envs/cellpose/lib/python3.8/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.8.5). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[train] slides=42 candidates=4233
+  5/42 rows=394
+  10/42 rows=752
+  15/42 rows=1258
+  20/42 rows=1628
+  25/42 rows=2265
+no seeds found in get_masks_torch - no masks found.
+  30/42 rows=2899
+  35/42 rows=3610
+no seeds found in get_masks_torch - no masks found.
+no seeds found in get_masks_torch - no masks found.
+no seeds found in get_masks_torch - no masks found.
+  40/42 rows=4109
+  42/42 rows=4233
+[train] {'pos': 217, 'neg': 3926, 'amb': 90, 'fallback': 48, 'candidates': 4233, 'pos_mask_cov_mean': None, 'pos_mask_cov_p5': None, 'pos_mask_cov_ge95': None}
+[val] slides=14 candidates=1200
+  5/14 rows=408
+no seeds found in get_masks_torch - no masks found.
+  10/14 rows=837
+  14/14 rows=1200
+[val] {'pos': 155, 'neg': 1028, 'amb': 17, 'fallback': 39, 'candidates': 1200, 'pos_mask_cov_mean': None, 'pos_mask_cov_p5': None, 'pos_mask_cov_ge95': None}
+wrote /home/hyw/dataset/chendawei/ICPR2012/classifier_C_gtfree/summary.json
+[2/3] train C on GT-free boards
+train usable=4143 pos=217 neg=3926 hard=1611 | val usable=1183 pos=155
+/home/hyw/chendawei/Yolov11s-cellpose-Resnet50/src/cellpose_baseline/dann_model.py:109: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  sd = torch.load(checkpoint, map_location='cpu')
+init missing=4 unexpected=0
+src/coarse_yolo/icpr2012/train_cls_boards.py:163: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=str(device).startswith("cuda"))
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 1/100] loss=0.1165 lr=1.33e-04 n=1085 time=4.3s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 2/100] loss=0.0696 lr=2.00e-04 n=1085 time=4.2s | val AUC=0.8287 AP=0.4776 bestF1=0.4795@0.28 *saved*
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 3/100] loss=0.0686 lr=2.00e-04 n=1085 time=4.2s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 4/100] loss=0.0589 lr=2.00e-04 n=1085 time=4.1s | val AUC=0.9386 AP=0.7436 bestF1=0.6854@0.63 *saved*
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 5/100] loss=0.0689 lr=2.00e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 6/100] loss=0.0549 lr=2.00e-04 n=1085 time=4.1s | val AUC=0.8846 AP=0.7120 bestF1=0.6667@0.49
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 7/100] loss=0.0442 lr=1.99e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 8/100] loss=0.0458 lr=1.99e-04 n=1085 time=4.2s | val AUC=0.9359 AP=0.7559 bestF1=0.6993@0.63 *saved*
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 9/100] loss=0.0425 lr=1.98e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 10/100] loss=0.0339 lr=1.97e-04 n=1085 time=4.1s | val AUC=0.8835 AP=0.6983 bestF1=0.6466@0.55
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 11/100] loss=0.0327 lr=1.97e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 12/100] loss=0.0416 lr=1.96e-04 n=1085 time=4.2s | val AUC=0.8817 AP=0.6104 bestF1=0.6261@0.44
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 13/100] loss=0.0364 lr=1.95e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 14/100] loss=0.0349 lr=1.94e-04 n=1085 time=4.1s | val AUC=0.8814 AP=0.6544 bestF1=0.6481@0.35
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 15/100] loss=0.0322 lr=1.93e-04 n=1085 time=4.2s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 16/100] loss=0.0317 lr=1.91e-04 n=1085 time=4.1s | val AUC=0.9171 AP=0.7066 bestF1=0.6485@0.35
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 17/100] loss=0.0290 lr=1.90e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 18/100] loss=0.0231 lr=1.88e-04 n=1085 time=4.2s | val AUC=0.8985 AP=0.7353 bestF1=0.7032@0.71
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 19/100] loss=0.0341 lr=1.87e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 20/100] loss=0.0299 lr=1.85e-04 n=1085 time=4.2s | val AUC=0.9129 AP=0.7467 bestF1=0.6977@0.40
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 21/100] loss=0.0218 lr=1.83e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 22/100] loss=0.0195 lr=1.82e-04 n=1085 time=4.2s | val AUC=0.9212 AP=0.7366 bestF1=0.7157@0.53
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 23/100] loss=0.0176 lr=1.80e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 24/100] loss=0.0211 lr=1.78e-04 n=1085 time=4.1s | val AUC=0.9194 AP=0.7274 bestF1=0.6939@0.28
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 25/100] loss=0.0162 lr=1.76e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 26/100] loss=0.0204 lr=1.74e-04 n=1085 time=4.2s | val AUC=0.8384 AP=0.5014 bestF1=0.4983@0.23
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 27/100] loss=0.0369 lr=1.71e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 28/100] loss=0.0221 lr=1.69e-04 n=1085 time=4.1s | val AUC=0.9083 AP=0.7318 bestF1=0.6884@0.36
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 29/100] loss=0.0139 lr=1.67e-04 n=1085 time=4.2s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 30/100] loss=0.0126 lr=1.64e-04 n=1085 time=4.1s | val AUC=0.9124 AP=0.7302 bestF1=0.6926@0.40
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 31/100] loss=0.0192 lr=1.62e-04 n=1085 time=3.8s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 32/100] loss=0.0145 lr=1.59e-04 n=1085 time=4.2s | val AUC=0.9052 AP=0.6974 bestF1=0.6887@0.17
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 33/100] loss=0.0163 lr=1.56e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 34/100] loss=0.0128 lr=1.54e-04 n=1085 time=4.2s | val AUC=0.9113 AP=0.6743 bestF1=0.6871@0.31
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 35/100] loss=0.0125 lr=1.51e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 36/100] loss=0.0114 lr=1.48e-04 n=1085 time=4.1s | val AUC=0.8995 AP=0.7195 bestF1=0.6733@0.35
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 37/100] loss=0.0097 lr=1.45e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 38/100] loss=0.0134 lr=1.42e-04 n=1085 time=4.2s | val AUC=0.9178 AP=0.7049 bestF1=0.6984@0.42
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 39/100] loss=0.0113 lr=1.39e-04 n=1085 time=4.2s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 40/100] loss=0.0076 lr=1.36e-04 n=1085 time=4.1s | val AUC=0.9123 AP=0.6863 bestF1=0.6687@0.13
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 41/100] loss=0.0056 lr=1.33e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 42/100] loss=0.0071 lr=1.30e-04 n=1085 time=4.2s | val AUC=0.9282 AP=0.7102 bestF1=0.6926@0.16
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 43/100] loss=0.0071 lr=1.27e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 44/100] loss=0.0118 lr=1.24e-04 n=1085 time=4.2s | val AUC=0.9080 AP=0.7374 bestF1=0.6894@0.25
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 45/100] loss=0.0093 lr=1.21e-04 n=1085 time=4.2s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 46/100] loss=0.0031 lr=1.18e-04 n=1085 time=4.1s | val AUC=0.8902 AP=0.6910 bestF1=0.6454@0.23
+src/coarse_yolo/icpr2012/train_cls_boards.py:193: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 47/100] loss=0.0040 lr=1.15e-04 n=1085 time=4.1s
+src/coarse_yolo/icpr2012/train_cls_boards.py:88: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+[ep 48/100] loss=0.0054 lr=1.11e-04 n=1085 time=4.1s | val AUC=0.8988 AP=0.7077 bestF1=0.6519@0.18 | early-stop
+done. best val AP=0.7559 -> /home/hyw/chendawei/Yolov11s-cellpose-Resnet50/runs/classifier_C_gtfree/run_C/best_cls.pth
+[3/3] online GT-free val/test evaluation
+/home/hyw/miniforge3/envs/midog/lib/python3.8/site-packages/google/auth/__init__.py:52: FutureWarning: You are using a Python version 3.8 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.8"), FutureWarning)
+/home/hyw/miniforge3/envs/midog/lib/python3.8/site-packages/google/oauth2/__init__.py:38: FutureWarning: You are using a Python version 3.8 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.8"), FutureWarning)
+/home/hyw/miniforge3/envs/midog/lib/python3.8/site-packages/google/auth/crypt/es.py:21: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  import cryptography.exceptions
+/home/hyw/miniforge3/envs/midog/lib/python3.8/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.8.5). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+src/coarse_yolo/icpr2012/eval_online_icpr2012.py:263: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(args.cls, map_location="cpu"))
+[val] slides=14
+src/coarse_yolo/icpr2012/eval_online_icpr2012.py:73: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=str(device).startswith("cuda")):
+  2/14 candidates=154 elapsed=52s
+  4/14 candidates=331 elapsed=109s
+  6/14 candidates=483 elapsed=159s
+  8/14 candidates=606 elapsed=200s
+no seeds found in get_masks_torch - no masks found.
+  10/14 candidates=870 elapsed=287s
+  12/14 candidates=1049 elapsed=346s
+  14/14 candidates=1256 elapsed=414s
+[test] slides=14
+  2/14 candidates=83 elapsed=27s
+  4/14 candidates=180 elapsed=59s
+  6/14 candidates=276 elapsed=90s
+  8/14 candidates=389 elapsed=126s
+  10/14 candidates=487 elapsed=159s
+  12/14 candidates=585 elapsed=192s
+  14/14 candidates=678 elapsed=222s
+temperature=0.6520 val_nll=0.2418
+
+=== counts ===
+{
+  "val": {
+    "candidates": 1256,
+    "y1": 158,
+    "y0": 1078,
+    "yneg": 20,
+    "fallback": 43
+  },
+  "test": {
+    "candidates": 678,
+    "y1": 84,
+    "y0": 578,
+    "yneg": 16,
+    "fallback": 2
+  }
+}
+
+=== C calibrated ===
+{
+  "params": {
+    "thr": 0.6900000000000001
+  },
+  "val": {
+    "cls": {
+      "auc": 0.9377832836241515,
+      "ap": 0.7566491336089395,
+      "best_f1": {
+        "f1": 0.6956521739130436,
+        "thr": 0.66,
+        "precision": 0.6829268292682927,
+        "recall": 0.7088607594936709,
+        "tp": 112,
+        "fp": 52,
+        "fn": 46
+      }
+    },
+    "e2e_best_on_split": {
+      "thr": 0.6900000000000001,
+      "tp": 110,
+      "fp": 58,
+      "fn": 54,
+      "precision": 0.6547619047619048,
+      "recall": 0.6707317073170732,
+      "f1": 0.6626506024096386,
+      "detections": 168
+    }
+  },
+  "test": {
+    "cls": {
+      "auc": 0.9735335310594826,
+      "ap": 0.8497033261574872,
+      "best_f1": {
+        "f1": 0.7757575757575756,
+        "thr": 0.7000000000000001,
+        "precision": 0.7901234567901234,
+        "recall": 0.7619047619047619,
+        "tp": 64,
+        "fp": 17,
+        "fn": 20
+      }
+    },
+    "e2e_best_on_split": {
+      "thr": 0.7000000000000001,
+      "tp": 64,
+      "fp": 32,
+      "fn": 20,
+      "precision": 0.6666666666666666,
+      "recall": 0.7619047619047619,
+      "f1": 0.7111111111111111,
+      "detections": 96
+    },
+    "e2e_at_val_thr": {
+      "thr": 0.6900000000000001,
+      "tp": 65,
+      "fp": 34,
+      "fn": 19,
+      "precision": 0.6565656565656566,
+      "recall": 0.7738095238095238,
+      "f1": 0.7103825136612023,
+      "detections": 99
+    }
+  }
+}
+
+=== fusion ===
+{
+  "params": {
+    "a": 0.5,
+    "b": 0.5,
+    "thr": 0.35000000000000003
+  },
+  "val": {
+    "thr": 0.35000000000000003,
+    "tp": 129,
+    "fp": 49,
+    "fn": 35,
+    "precision": 0.7247191011235955,
+    "recall": 0.7865853658536586,
+    "f1": 0.7543859649122807,
+    "detections": 178,
+    "a": 0.5,
+    "b": 0.5
+  },
+  "test": {
+    "thr": 0.35000000000000003,
+    "tp": 76,
+    "fp": 24,
+    "fn": 8,
+    "precision": 0.76,
+    "recall": 0.9047619047619048,
+    "f1": 0.8260869565217391,
+    "detections": 100
+  }
+}
+
+=== yolo only ===
+{
+  "params": {
+    "thr": 0.37,
+    "dedup_px": 24.0
+  },
+  "val": {
+    "thr": 0.37,
+    "tp": 118,
+    "fp": 43,
+    "fn": 46,
+    "precision": 0.7329192546583851,
+    "recall": 0.7195121951219512,
+    "f1": 0.726153846153846,
+    "detections": 161
+  },
+  "test": {
+    "thr": 0.37,
+    "tp": 70,
+    "fp": 20,
+    "fn": 14,
+    "precision": 0.7777777777777778,
+    "recall": 0.8333333333333334,
+    "f1": 0.8045977011494253,
+    "detections": 90
+  }
+}
+wrote /home/hyw/chendawei/Yolov11s-cellpose-Resnet50/runs/online_C_gtfree/online_C
+done

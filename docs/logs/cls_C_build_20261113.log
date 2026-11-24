@@ -1,0 +1,35 @@
+/home/hyw/miniforge3/envs/cellpose/lib/python3.8/site-packages/google/auth/__init__.py:52: FutureWarning: You are using a Python version 3.8 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.8"), FutureWarning)
+/home/hyw/miniforge3/envs/cellpose/lib/python3.8/site-packages/google/oauth2/__init__.py:38: FutureWarning: You are using a Python version 3.8 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.8"), FutureWarning)
+/home/hyw/miniforge3/envs/cellpose/lib/python3.8/site-packages/google/auth/crypt/es.py:21: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  import cryptography.exceptions
+/home/hyw/miniforge3/envs/cellpose/lib/python3.8/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.8.5). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[train] slides=42 candidates=4233
+  5/42 rows=394
+  10/42 rows=752
+  15/42 rows=1258
+  20/42 rows=1628
+  25/42 rows=2265
+no seeds found in get_masks_torch - no masks found.
+  30/42 rows=2899
+  35/42 rows=3610
+no seeds found in get_masks_torch - no masks found.
+no seeds found in get_masks_torch - no masks found.
+no seeds found in get_masks_torch - no masks found.
+  40/42 rows=4109
+  42/42 rows=4233
+[train] {'pos': 217, 'neg': 3926, 'amb': 90, 'fallback': 48, 'candidates': 4233, 'pos_mask_cov_mean': 0.996163568633208, 'pos_mask_cov_p5': 0.9776509386098428, 'pos_mask_cov_ge95': 0.9815668202764977}
+[val] slides=14 candidates=1200
+  5/14 rows=408
+no seeds found in get_masks_torch - no masks found.
+  10/14 rows=837
+  14/14 rows=1200
+[val] {'pos': 155, 'neg': 1028, 'amb': 17, 'fallback': 39, 'candidates': 1200, 'pos_mask_cov_mean': 0.9992552641949284, 'pos_mask_cov_p5': 1.0, 'pos_mask_cov_ge95': 1.0}
+[test] slides=14 candidates=660
+  5/14 rows=220
+  10/14 rows=474
+  14/14 rows=660
+[test] {'pos': 83, 'neg': 566, 'amb': 11, 'fallback': 2, 'candidates': 660, 'pos_mask_cov_mean': 0.9875411213658098, 'pos_mask_cov_p5': 0.926259276118375, 'pos_mask_cov_ge95': 0.9036144578313253}
+wrote /home/hyw/chendawei/dann_finetune/yoloC_cellpose/summary.json

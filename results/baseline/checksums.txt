@@ -1,0 +1,11 @@
+# Baseline artifact checksums (sha256)
+
+## Dataset manifests
+813981379cf45c2e324f3b83558d3b2fdaba5bc3d41ff1a45d85792a22097be5  manifest_train.csv
+097ea08cb6628cb72b7714fbda2e781f18ff0da6b92a7de83435139fb64ed739  manifest_val.csv
+2ea4872cf03707d8771d4a075095c7cfe25745ba14ecf4a6f7b705e83f3c68c0  summary.json
+
+## Weights
+0676ba61b6795bbe1773cffd859882e5e297624d384b6993f7c9e683e722fb8a  resnet50-0676ba61.pth
+313898e3b46218459ff3b8c5fbdd43942c6779429b1654df1cd8cbab9b86ff63  yolo/epoch25.pt
+568ebaaa1e5492d02e77b9de76f944d8b0eaaa5d29b85a426abf77e0091de636  run_C/best_cls.pth

@@ -1,0 +1,11 @@
+{
+  "criterion": "A: patch recall desc, candidates/slide asc",
+  "selected_checkpoint": "runs/icpr2012_v2a_gtcrop4/weights/epoch25.pt",
+  "checkpoint": "epoch25",
+  "epoch": 25,
+  "conf": 0.0006665749242529273,
+  "patch_recall": 1.0,
+  "center5um_recall": 0.9695121951219512,
+  "candidates": 2124,
+  "candidates_per_slide": 151.71428571428572
+}

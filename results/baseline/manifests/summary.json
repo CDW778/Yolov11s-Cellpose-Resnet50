@@ -1,0 +1,22 @@
+{
+  "train": {
+    "pos": 217,
+    "neg": 3926,
+    "amb": 90,
+    "fallback": 48,
+    "candidates": 4233,
+    "pos_mask_cov_mean": null,
+    "pos_mask_cov_p5": null,
+    "pos_mask_cov_ge95": null
+  },
+  "val": {
+    "pos": 155,
+    "neg": 1028,
+    "amb": 17,
+    "fallback": 39,
+    "candidates": 1200,
+    "pos_mask_cov_mean": null,
+    "pos_mask_cov_p5": null,
+    "pos_mask_cov_ge95": null
+  }
+}

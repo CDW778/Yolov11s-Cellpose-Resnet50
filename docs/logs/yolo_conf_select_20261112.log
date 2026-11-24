@@ -1,0 +1,78 @@
+val slides=14 checkpoints=18 raw_conf=5e-05
+
+[1/18] epoch0
+  patchR=1.0000 center5=0.9756 conf=0.0037912 cand/slide=157.4
+
+[2/18] epoch5
+  patchR=1.0000 center5=0.9695 conf=0.00034714 cand/slide=267.7
+
+[3/18] epoch10
+  patchR=1.0000 center5=0.9634 conf=0.00058449 cand/slide=227.8
+
+[4/18] epoch15
+  patchR=1.0000 center5=0.9878 conf=8.6016e-05 cand/slide=397.1
+
+[5/18] epoch20
+  patchR=1.0000 center5=0.9573 conf=0.00017674 cand/slide=268.5
+
+[6/18] epoch25
+  patchR=1.0000 center5=0.9695 conf=0.00066657 cand/slide=151.7
+
+[7/18] epoch30
+  patchR=1.0000 center5=0.9695 conf=0.000456 cand/slide=228.2
+
+[8/18] epoch35
+  patchR=1.0000 center5=0.9512 conf=0.00016918 cand/slide=245.1
+
+[9/18] epoch40
+  patchR=1.0000 center5=0.9817 conf=0.00014284 cand/slide=462.0
+
+[10/18] epoch45
+  patchR=1.0000 center5=0.9878 conf=7.5037e-05 cand/slide=454.3
+
+[11/18] epoch50
+  patchR=1.0000 center5=0.9695 conf=7.669e-05 cand/slide=539.2
+
+[12/18] epoch55
+  patchR=1.0000 center5=0.9634 conf=0.00011244 cand/slide=358.3
+
+[13/18] epoch60
+  patchR=1.0000 center5=0.9390 conf=6.0485e-05 cand/slide=511.8
+
+[14/18] epoch65
+  patchR=1.0000 center5=0.9634 conf=5.9949e-05 cand/slide=391.4
+
+[15/18] epoch70
+  patchR=0.9939 center5=0.9634 conf=0.00011129 cand/slide=266.4
+
+[16/18] epoch75
+  patchR=1.0000 center5=0.9512 conf=5.158e-05 cand/slide=388.7
+
+[17/18] last
+  patchR=1.0000 center5=0.9512 conf=5.5942e-05 cand/slide=387.4
+
+[18/18] best
+  patchR=1.0000 center5=0.9512 conf=6.2481e-05 cand/slide=346.7
+
+=== criterion A ranking (patch recall desc, candidates asc) ===
+checkpoint    epoch  gt  covered  patch_recall  center5um_recall     conf  candidates  candidates_per_slide
+   epoch25       25 164      164      1.000000          0.969512 0.000667        2124            151.714286
+    epoch0        0 164      164      1.000000          0.975610 0.003791        2204            157.428571
+   epoch10       10 164      164      1.000000          0.963415 0.000584        3189            227.785714
+   epoch30       30 164      164      1.000000          0.969512 0.000456        3195            228.214286
+   epoch35       35 164      164      1.000000          0.951220 0.000169        3431            245.071429
+    epoch5        5 164      164      1.000000          0.969512 0.000347        3748            267.714286
+   epoch20       20 164      164      1.000000          0.957317 0.000177        3759            268.500000
+      best 10000000 164      164      1.000000          0.951220 0.000062        4854            346.714286
+   epoch55       55 164      164      1.000000          0.963415 0.000112        5016            358.285714
+      last  1000000 164      164      1.000000          0.951220 0.000056        5424            387.428571
+   epoch75       75 164      164      1.000000          0.951220 0.000052        5442            388.714286
+   epoch65       65 164      164      1.000000          0.963415 0.000060        5480            391.428571
+   epoch15       15 164      164      1.000000          0.987805 0.000086        5560            397.142857
+   epoch45       45 164      164      1.000000          0.987805 0.000075        6360            454.285714
+   epoch40       40 164      164      1.000000          0.981707 0.000143        6468            462.000000
+   epoch60       60 164      164      1.000000          0.939024 0.000060        7165            511.785714
+   epoch50       50 164      164      1.000000          0.969512 0.000077        7549            539.214286
+   epoch70       70 164      163      0.993902          0.963415 0.000111        3729            266.357143
+
+selected: {'criterion': 'A: patch recall desc, candidates/slide asc', 'selected_checkpoint': 'runs/icpr2012_v2a_gtcrop4/weights/epoch25.pt', 'checkpoint': 'epoch25', 'epoch': 25, 'conf': 0.0006665749242529273, 'patch_recall': 1.0, 'center5um_recall': 0.9695121951219512, 'candidates': 2124, 'candidates_per_slide': 151.71428571428572}

@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pid
+*.logpath
+.cortexkit/
+
+# large artifacts: keep local / GitHub Release, never commit
+/weights/
+runs/**/*.pth
+runs/**/*.pt
+runs/**/weights/
+/data/
+/logs/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

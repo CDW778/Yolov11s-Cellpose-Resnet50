@@ -1,0 +1,23 @@
+Project: YOLO11s + Cellpose + ResNet50 (ICPR2012)
+Date: 2026-11-14
+
+GPU: NVIDIA GeForce RTX 2080 Ti (11 GB)
+
+## YOLO / ResNet environment
+python:     /home/hyw/miniforge3/envs/midog/bin/python
+Python:     3.8.5
+torch:      2.4.1+cu121
+torchvision:0.19.1+cu121
+ultralytics:8.3.253
+numpy:      1.24.4
+opencv:     4.13.0
+scikit-learn:1.3.2
+scipy:      1.10.1
+
+## Cellpose environment
+python:     /home/hyw/miniforge3/envs/cellpose/bin/python
+Python:     3.8.5
+torch:      2.4.1+cu121
+numpy:      1.24.4
+opencv:     4.13.0
+Cellpose model: weights/cellpose/cpsam_v2 (copied from /home/hyw/chendawei/cellpose-weight/cpsam_v2)
